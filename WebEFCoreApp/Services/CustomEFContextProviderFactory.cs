@@ -17,9 +17,11 @@ namespace WebEFCoreApp.Services {
         public CustomEFContextProvider(IServiceScope scope) {
             this.scope = scope;
         }
+        
         public object GetContext(string connectionName, Type contextType) {
-            if(connectionName == "efCoreConnection")
-                return scope.ServiceProvider.GetService(contextType);
+            // Returns the context for the specified `EFDataSource.ConnectionName`. 
+            if (connectionName == "efCoreConnection")
+                return scope.ServiceProvider.GetRequiredService(contextType);
             return null;
         }
         public void Dispose() {
