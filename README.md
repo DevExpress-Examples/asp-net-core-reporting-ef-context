@@ -8,7 +8,7 @@
 
 The following example shows how to obtain the Entity Framework Core context from the ASP.NET Core dependency injection container.
 
-1. Implement the `IEFContextProvider` and `IEFContextProviderFactory` interfaces (the `CustomEFContextProvider` and `CustomEFContextProviderFactory` classes in this example) to create a service that allows you to get the EF Core Context.
+1. Implement the [IEFContextProvider](https://docs.devexpress.com/CoreLibraries/DevExpress.Data.Entity.IEFContextProvider?v=23.1&p=netframework) and [IEFContextProviderFactory](https://docs.devexpress.com/CoreLibraries/DevExpress.DataAccess.Web.IEFContextProviderFactory?v=23.1&p=netframework) interfaces (the `CustomEFContextProvider` and `CustomEFContextProviderFactory` classes in this example) to create a service that allows you to get the EF Core Context.
 
 2. Register the context in the dependency injection container. Call the [AddDbContext](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.dependencyinjection.entityframeworkservicecollectionextensions.adddbcontext?view=efcore-7.0) method in the `ConfigureServices` method of the `Startup` class to specify the required connection string. 
 
