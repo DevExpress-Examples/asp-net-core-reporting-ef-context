@@ -41,7 +41,7 @@ namespace WebEFCoreApp {
                 configurator.UseAsyncEngine();
             });
             services.AddDbContext<ReportDbContext>(options => options.UseSqlite(Configuration.GetConnectionString("ReportsDataConnectionString")));
-            services.AddDbContext<OrdersContext>(options => options.UseSqlite("NWindConnectionString"), ServiceLifetime.Transient);
+            services.AddDbContext<OrdersContext>(options => options.UseSqlite(Configuration.GetConnectionString("NWindConnectionString")), ServiceLifetime.Transient);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
